@@ -3,22 +3,41 @@ os: Visual Studio 2015
 configuration: Release
 platform: Any CPU
 skip_tags: true
+init:
+  - cmd: tzutil /s "Tokyo Standard Time"
 before_build:
   - ps: nuget restore
 build:
   project: Scallion.Tools.sln
   verbosity: minimal
   publish_nuget: true
+after_build:
+  - ps: >-
+      $artifacts = "MikuMikuUtils"
+
+      New-Item -type directory $artifacts
+
+      "$artifacts Build $env:APPVEYOR_BUILD_VERSION" > $artifacts\readme.txt
+
+      Get-Content distribution-readme.txt >> $artifacts\readme.txt
+
+      Get-Date -Format "yyyy/MM/dd" >> $artifacts\readme.txt
+
+      Get-ChildItem **\bin\$env:CONFIGURATION\*.exe | Copy-Item -destination $artifacts
+
+      Get-ChildItem **\bin\$env:CONFIGURATION\*.dll | Copy-Item -destination $artifacts
 artifacts:
   - path: Scallion.Tools.Essentials\bin\$(configuration)
     name: Scallion.Tools.Essentials
+  - path: MikuMikuUtils
+    name: MikuMikuUtils
 deploy:
   - provider: GitHub
     tag: build-$(appveyor_build_version)
     release: MikuMikuUtils Build $(appveyor_build_version)
     auth_token:
       secure: KkbkUfg5iFaqdqxRAHRvPZv5+nfF99DyufxN6IijxL2TWoV3QTdkAkrnyNvIPt9+
-    artifact: Scallion.Tools.Essentials
+    artifact: Scallion.Tools.Essentials,MikuMikuUtils
     draft: true
     on:
       branch: master

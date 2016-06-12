@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("vmdscale")]
-[assembly: AssemblyDescription("scale vmd files and output to a file")]
+[assembly: AssemblyDescription("scale a vmd file and write to a file")]
 [assembly: AssemblyCompany("paltee.net")]
 [assembly: AssemblyProduct("vmdscale")]
 [assembly: AssemblyCopyright("Copyright (C) 2016 Paralleltree")]

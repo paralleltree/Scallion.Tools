@@ -23,6 +23,12 @@ vmdscale motion.vmd -s 0.8
 vmdcut motion.vmd --start 100 --end 400 -o out.vmd
 ```
 
+## ダウンロード
+ダウンロードについては[Releases](https://github.com/paralleltree/Scallion.Tools/releases)より可能です。
+
+希望のリリースのDownloadsから、`MikuMikuUtils.zip`をダウンロード、解凍してください。
+
+
 ## Scallion.Tools.Essentials
 [![NuGet Release](https://img.shields.io/nuget/vpre/Scallion.Tools.Essentials.svg)](https://www.nuget.org/packages/Scallion.Tools.Essentials)
 
@@ -90,3 +96,8 @@ class Program : Runner
     }
 }
 ```
+
+
+## ライセンス
+MITライセンスとします。  
+詳しくは[LICENSE](https://github.com/paralleltree/Scallion.Tools/blob/master/LICENSE)を参照してください。

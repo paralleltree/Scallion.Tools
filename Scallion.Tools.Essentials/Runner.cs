@@ -76,6 +76,11 @@ namespace Scallion.Tools.Essentials
                 Console.WriteLine("詳細を表示するには '{0} --help' を実行してください。", Name);
                 Environment.Exit(1);
             }
+            catch (System.IO.EndOfStreamException)
+            {
+                Console.WriteLine("ファイルの読み込み中にエラーが発生しました。");
+                Console.WriteLine("古いバージョンのファイルを読み込もうとした可能性があります。");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("エラー: {0}", ex.Message);

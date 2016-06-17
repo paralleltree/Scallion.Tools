@@ -75,21 +75,7 @@ namespace Scallion.Tools.VmdScale
             foreach (var keyframe in input.Camera.KeyFrames)
                 keyframe.Position = keyframe.Position.ScaleVector3(Parameter.ScaleFactor);
 
-            if (!Parameter.ForceOverwrite && File.Exists(Parameter.OutputFile))
-            {
-                Console.WriteLine("出力先のファイル {0} は既に存在しています。", Parameter.OutputFile);
-                while (true)
-                {
-                    Console.Write("上書きしますか？ (y/N) > ");
-                    string res = Console.ReadLine();
-                    if (res == "" || Regex.IsMatch(res, "^(y|n)$", RegexOptions.IgnoreCase))
-                    {
-                        if (res.ToLower() == "y") break;
-                        else return;
-                    }
-                }
-            }
-
+            if (!Parameter.ForceOverwrite && !Parameter.OutputFile.ConfirmOverwrite()) return;
             input.Save(Parameter.OutputFile);
         }
     }

@@ -80,10 +80,11 @@ namespace Scallion.Tools.Essentials
             {
                 Console.WriteLine("ファイルの読み込み中にエラーが発生しました。");
                 Console.WriteLine("古いバージョンのファイルを読み込もうとした可能性があります。");
+                Environment.Exit(2);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("エラー: {0}", ex.Message);
+                Console.WriteLine("エラー({0}): {1}", ex.GetType().ToString(), ex.Message);
                 Console.WriteLine("詳細情報:");
                 Console.WriteLine(ex.StackTrace);
                 Environment.Exit(2);

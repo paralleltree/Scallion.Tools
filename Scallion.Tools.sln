@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vmdscale", "vmdscale\vmdsca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vmdcut", "vmdcut\vmdcut.csproj", "{782835FC-78D8-4177-B45B-C9D8C3EF8DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vmdstat", "vmdstat\vmdstat.csproj", "{55E45031-73DE-40DB-A801-73530A7BA1A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{782835FC-78D8-4177-B45B-C9D8C3EF8DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{782835FC-78D8-4177-B45B-C9D8C3EF8DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{782835FC-78D8-4177-B45B-C9D8C3EF8DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E45031-73DE-40DB-A801-73530A7BA1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E45031-73DE-40DB-A801-73530A7BA1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E45031-73DE-40DB-A801-73530A7BA1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E45031-73DE-40DB-A801-73530A7BA1A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

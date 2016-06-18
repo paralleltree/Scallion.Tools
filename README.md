@@ -23,6 +23,19 @@ vmdscale motion.vmd -s 0.8
 vmdcut motion.vmd --start 100 --end 400 -o out.vmd
 ```
 
+### vmdstat
+モーションファイルの情報を表示します。
+
+使用例 (`motion.vmd`の情報を表示)
+```
+> vmdstat motion.vmd
+motion.vmd:
+モデル名: テストモデル
+[ボーン]
+ボーン数: 157
+...
+```
+
 ## ダウンロード
 ダウンロードについては[Releases](https://github.com/paralleltree/Scallion.Tools/releases)より可能です。
 

@@ -35,7 +35,7 @@ namespace Scallion.Tools.VmdCut
             {
                 { "?|h|help", "ヘルプを表示し、終了します。",  _ => Parameter.ShowHelp = _ != null },
                 { "f|force", "出力ファイルを警告なく上書きします。", _ => Parameter.ForceOverwrite = _ != null },
-                { "o=|out=", "出力先を指定します。", (string s ) => Parameter.OutputFile = s },
+                { "o=|out=", "出力先を指定します。", (string s) => Parameter.OutputFile = s },
                 { "start=", "開始フレームのインデックスを指定します。指定がない場合は0が指定されます。", (int i) => Parameter.StartFrameIndex = i },
                 { "end=", "終了フレームのインデックスを指定します。指定がない場合は末尾まで出力します。", (int i) => Parameter.EndFrameIndex = i }
             };

@@ -76,6 +76,12 @@ namespace Scallion.Tools.Essentials
                 Console.WriteLine("詳細を表示するには '{0} --help' を実行してください。", Name);
                 Environment.Exit(1);
             }
+            catch (Exception ex) when (ex is System.IO.FileNotFoundException || ex is System.IO.DirectoryNotFoundException)
+            {
+                string path = System.Text.RegularExpressions.Regex.Match(ex.Message, @"'.+'").Value;
+                Console.WriteLine("エラー: ファイル {0} は見つかりませんでした。", path);
+                Environment.Exit(1);
+            }
             catch (System.IO.EndOfStreamException)
             {
                 Console.WriteLine("ファイルの読み込み中にエラーが発生しました。");
